@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Accessible Page</title></head>
+<body>
+    <a href="#main">Skip to main content</a>
+    <nav aria-label="Help navigation"><a href="#help">Home</a> <a id="help" href="#help">Help</a></nav>
+    <main id="main">
+        <h1>Accessible Page</h1>
+        <form role="search" aria-label="Site search">
+            <label for="search">Search:</label>
+            <input id="search" type="search" name="q">
+            <button type="submit" aria-label="Submit search">Search</button>
+        </form>
+    </main>
+</body>
+</html>
