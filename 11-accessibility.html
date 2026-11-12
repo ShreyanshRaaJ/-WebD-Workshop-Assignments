@@ -1,16 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Accessible Page</title></head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Web Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        .skip-link {
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        a:focus, input:focus, button:focus {
+            outline: 3px solid #2457c5;
+            outline-offset: 2px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
 <body>
-    <a href="#main">Skip to main content</a>
-    <nav aria-label="Help navigation"><a href="#help">Home</a> <a id="help" href="#help">Help</a></nav>
-    <main id="main">
-        <h1>Accessible Page</h1>
-        <form role="search" aria-label="Site search">
-            <label for="search">Search:</label>
-            <input id="search" type="search" name="q">
-            <button type="submit" aria-label="Submit search">Search</button>
-        </form>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header>
+        <nav aria-label="Main navigation">
+            <a href="#main-content">Home</a> |
+            <a href="#about">About</a> |
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <h1>Accessible Web Page</h1>
+
+        <section id="about" aria-labelledby="about-heading">
+            <h2 id="about-heading">About ABES Engineering College</h2>
+            <img
+                src="https://www.abes.ac.in/assets/HomePage/About%20ABES.webp"
+                alt="ABES Engineering College campus building"
+                width="600">
+            <p>This page demonstrates basic web accessibility features.</p>
+        </section>
+
+        <section id="contact" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact Form</h2>
+            <form aria-label="Contact form">
+                <label for="name">Name:</label>
+                <input id="name" name="name" type="text" required>
+
+                <label for="email">Email:</label>
+                <input id="email" name="email" type="email" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
     </main>
 </body>
 </html>
